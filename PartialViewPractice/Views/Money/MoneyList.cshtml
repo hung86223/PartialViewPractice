@@ -1,0 +1,38 @@
+﻿
+@{
+    ViewBag.Title = "MoneyList";
+}
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="http://ajax.aspnetcdn.com/ajax/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+
+
+        <div class="col-md-12">
+            <table class="table table-bordered table-hover">
+                <tr>
+                    <th>#</th>
+                    <th>類別</th>
+                    <th>日期</th>
+                    <th>金額</th>
+                </tr>
+                @foreach (var rowData in Model)
+                {
+                    <tr>
+                        <td>@rowData.Id</td>
+                        <td>@rowData.Type</td>
+                        <td>@rowData.Date.ToString("yyyy-MM-dd")</td>
+                        <td>@rowData.Cost.ToString("#,###")</td>
+                    </tr>
+                }
+
+            </table>
+        </div>
+    <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.2.1.min.js"></script>
+    <script src="http://ajax.aspnetcdn.com/ajax/bootstrap/3.3.6/bootstrap.min.js"></script>
+</body>
+</html>
